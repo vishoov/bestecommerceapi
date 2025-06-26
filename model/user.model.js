@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
     },
     role:{
         type:String,
-        enum:["user", "admin"], //user or admin //enum is used to define the valid
+        enum:["user", "admin", "seller"], //user or admin //enum is used to define the valid
         //values for the field 
         default:"user" //default role is user
 

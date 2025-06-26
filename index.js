@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const userRoutes = require("./view/user.routes");
 const mongoose = require("mongoose")
-// Hi5OGGbLDK6MoTmT
+const cartRoutes = require("./view/cart.routes")
 const dotenv = require("dotenv")
-
+const productRoutes = require("./view/product.routes")
 dotenv.config();
 
 
@@ -41,6 +41,9 @@ const loggermiddleware = (req, res, next) =>{
 app.use(loggermiddleware)
 
 app.use("/api/v1/", userRoutes)
+app.use("/api/v1/", productRoutes)
+app.use("/api/v1/", cartRoutes)
+
 
 app.get("/", (req, res)=>{
     try{

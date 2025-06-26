@@ -1,7 +1,7 @@
 const express= require("express")
 const router = express().router;
 const User = require("../model/user.model")
-
+const { generateToken, authenticate } = require("../middlewares/auth")
 
 
 router.post("/signup", async (req, res)=>{
@@ -10,11 +10,13 @@ router.post("/signup", async (req, res)=>{
 
         //data base function to add user
         const newuser = await User.create(user);
+
+        const token = generateToken(user);
         
-        res.json({message:`user created with details`, newuser})
+        res.json({message:`user created with details`, newuser, token})
     }
     catch(err){
-        res.status(400).send("Error in signing up")
+        res.status(400).send(err.message)
     }
 })
 
@@ -30,13 +32,17 @@ router.post("/login", async (req, res)=>{
             res.status(400).send("User not found")
         }
 
+
+
         const passwordcorrect = await user.comparePassword(password);
 
         if(!passwordcorrect){
             res.status(400).send("User password incorrect")
         }
 
-        res.json({message:"User logged in", user})
+        const token = generateToken(user);
+
+        res.json({message:"User logged in", user, token})
     }
     catch(err){
         res.send("Error")
@@ -83,7 +89,7 @@ router.put("/changepassword", async (req, res)=>{
 })
 
 
-router.get("/profile/:email", async (req, res)=>{
+router.get("/profile/:email", authenticate, async (req, res)=>{
     try{
         const email = req.params.email;
 

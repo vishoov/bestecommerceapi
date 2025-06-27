@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 const cartRoutes = require("./view/cart.routes")
 const dotenv = require("dotenv")
 const productRoutes = require("./view/product.routes")
+const OrderRoutes = require("./view/order.routes");
 dotenv.config();
 
 
@@ -43,7 +44,7 @@ app.use(loggermiddleware)
 app.use("/api/v1/", userRoutes)
 app.use("/api/v1/", productRoutes)
 app.use("/api/v1/", cartRoutes)
-
+app.use("/api/v1/", OrderRoutes)
 
 app.get("/", (req, res)=>{
     try{

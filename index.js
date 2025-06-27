@@ -48,7 +48,7 @@ app.use("/api/v1/", OrderRoutes)
 
 app.get("/", (req, res)=>{
     try{
-        res.send("Hello World, welcome to the ecommerce Restful API")
+        res.sendFile(__dirname + "/index.html")
     }
     catch(err){
         res.status(400).send("Facing some errors :(")

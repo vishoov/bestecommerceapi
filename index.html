@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 900px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); padding: 48px 40px;">
+        <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 8px; color: #222;">E-Commerce Platform – A best-in-class API Project!</h1>
+        <p style="color: #666; font-size: 1.2rem; margin-bottom: 32px;">A scalable, secure, and modular e-commerce backend using modern technologies and microservices architecture.</p>
+        
+        <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 12px;">Tech Stack</h2>
+            <ul style="display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0;">
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">Node.js</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">Express.js</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">MongoDB</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">Mongoose</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">JWT</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">bCrypt</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">Nodemailer</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">Nodemon</li>
+                <li style="background: #f5f7fa; border-radius: 8px; padding: 10px 18px;">dotenv</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 12px;">Architecture Overview</h2>
+            <p style="color: #444; margin-bottom: 10px;">
+                The platform is built using a <b>microservices architecture</b>, where each core feature is encapsulated in its own service. This ensures scalability, maintainability, and independent deployment.
+            </p>
+            <ul style="color: #444; margin-left: 18px;">
+                <li><b>API Gateway:</b> Central entry point for all client requests.</li>
+                <li><b>Authentication Service:</b> Handles user registration, login, JWT-based authentication, and password management.</li>
+                <li><b>Product Service:</b> Manages product CRUD, search, and inventory.</li>
+                <li><b>Cart Service:</b> Manages user carts and cart operations.</li>
+                <li><b>Order Service:</b> Handles order placement, tracking, and cancellation.</li>
+                <li><b>Review Service:</b> Manages product reviews and ratings.</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 12px;">Key Features</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div>
+                    <h3 style="color: #222; font-size: 1.1rem;">Products</h3>
+                    <ul style="color: #444; margin-left: 18px;">
+                        <li>Create, fetch, update, delete products</li>
+                        <li>Search products by name/category</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #222; font-size: 1.1rem;">User Authentication</h3>
+                    <ul style="color: #444; margin-left: 18px;">
+                        <li>Signup, login, logout</li>
+                        <li>Role-based access (user/admin)</li>
+                        <li>Password encryption (bCrypt)</li>
+                        <li>JWT authentication</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #222; font-size: 1.1rem;">Cart</h3>
+                    <ul style="color: #444; margin-left: 18px;">
+                        <li>Add/remove products</li>
+                        <li>Fetch cart details</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #222; font-size: 1.1rem;">Orders</h3>
+                    <ul style="color: #444; margin-left: 18px;">
+                        <li>Place, cancel, and track orders</li>
+                        <li>Email notifications (Nodemailer)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #222; font-size: 1.1rem;">Reviews</h3>
+                    <ul style="color: #444; margin-left: 18px;">
+                        <li>Create, fetch, and delete reviews</li>
+                        <li>Verified purchase checks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 12px;">Database Schemas</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div>
+                    <h4 style="color: #444; font-size: 1.05rem;">Product</h4>
+                    <pre style="background: #f5f7fa; border-radius: 8px; padding: 12px; font-size: 0.98rem;">
+    id: string
+    name: string
+    description: string
+    costPrice: number
+    salePrice: number
+    category: string
+    stock: number
+    image: [string]
+    createdAt: date
+                    </pre>
+                </div>
+                <div>
+                    <h4 style="color: #444; font-size: 1.05rem;">User</h4>
+                    <pre style="background: #f5f7fa; border-radius: 8px; padding: 12px; font-size: 0.98rem;">
+    id: string
+    name: string
+    age: number
+    email: string
+    address: string
+    contact: number
+    role: "user" | "admin"
+    password: string
+                    </pre>
+                </div>
+                <div>
+                    <h4 style="color: #444; font-size: 1.05rem;">Cart</h4>
+                    <pre style="background: #f5f7fa; border-radius: 8px; padding: 12px; font-size: 0.98rem;">
+    id: string
+    userId: string
+    products: [{
+        productId: string,
+        price: number,
+        quantity: number
+    }]
+    totalAmount: number
+                    </pre>
+                </div>
+                <div>
+                    <h4 style="color: #444; font-size: 1.05rem;">Order</h4>
+                    <pre style="background: #f5f7fa; border-radius: 8px; padding: 12px; font-size: 0.98rem;">
+    id: string
+    userId: string
+    items: [{
+        productId: string,
+        quantity: number,
+        price: number
+    }]
+    totalAmount: number
+    shippingAddress: string
+    status: string
+                    </pre>
+                </div>
+                <div>
+                    <h4 style="color: #444; font-size: 1.05rem;">Review</h4>
+                    <pre style="background: #f5f7fa; border-radius: 8px; padding: 12px; font-size: 0.98rem;">
+    id: string
+    productId: string
+    rating: number
+    userId: string
+    title: string
+    description: string
+    verifiedPurchase: boolean
+    votes: number
+    media: [string]
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 12px;">API Endpoints</h2>
+            <ul style="color: #444; margin-left: 18px;">
+                <li><b>Products:</b> <code>POST /createProduct</code>, <code>GET /product</code>, <code>PUT /updateProduct</code>, <code>DELETE /deleteProduct</code>, <code>GET /searchProduct</code></li>
+                <li><b>Auth:</b> <code>POST /signup</code>, <code>POST /login</code>, <code>POST /logout</code>, <code>PUT /updatePassword</code>, <code>GET /profile</code></li>
+                <li><b>Cart:</b> <code>POST /addToCart</code>, <code>DELETE /deleteFromCart</code>, <code>GET /cart</code></li>
+                <li><b>Orders:</b> <code>POST /placeOrder</code>, <code>DELETE /cancelOrder</code>, <code>GET /trackOrder</code></li>
+                <li><b>Reviews:</b> <code>POST /createReview</code>, <code>GET /reviews/:productId</code>, <code>DELETE /deleteReview</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 12px;">Security & Best Practices</h2>
+            <ul style="color: #444; margin-left: 18px;">
+                <li>JWT for stateless authentication</li>
+                <li>Password hashing with bCrypt</li>
+                <li>Role-based access control</li>
+                <li>Environment variables for sensitive data (dotenv)</li>
+                <li>Input validation with Mongoose schemas</li>
+                <li>Email notifications for order confirmations and tracking</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

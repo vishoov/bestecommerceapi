@@ -1,0 +1,5 @@
+Deployment is not a part of MERN stack 
+
+very tough task for us 
+
+devOps -> deployment, cloud computing, cloud infrastructure 
